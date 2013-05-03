@@ -1,7 +1,6 @@
 class HomeController < ApplicationController
   def index
-    User.first.like_it(Item.first)
-
+    @items = Item.all
 
     respond_to do |format|
       format.html # index.html.erb
