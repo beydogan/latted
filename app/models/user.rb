@@ -33,8 +33,7 @@ class User < ActiveRecord::Base
 
   ## LIKES
   has_many :user_actions
-  has_many :actions, :through => :user_actions, :source => :user_action
-
+  has_many :actions, :through => :user_actions, :source => :item
 
 
 
