@@ -5,9 +5,9 @@
     <img src="assets/img/212x192.jpg" title="" alt="Img preview">
 
 
-    <%= link_to '', item_action_path(item, "like"), :remote => true, :class => "popup" %>
-    <%= link_to '', item_action_path(item, "own"), :remote => true, :class => "popup2" %>
-    <%= link_to '', item_action_path(item, "want"), :remote => true, :class => "popup3" %>
+    <%= link_to '', item_action_path(item, "like"), :remote => true, :class => "popup like_" + item.id.to_s %>
+    <%= link_to '', item_action_path(item, "own"), :remote => true, :class => "popup2 own_" + item.id.to_s %>
+    <%= link_to '', item_action_path(item, "want"), :remote => true, :class => "popup3 want_" + item.id.to_s %>
 
   </div>
 
