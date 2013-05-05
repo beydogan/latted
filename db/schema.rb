@@ -86,7 +86,7 @@ ActiveRecord::Schema.define(:version => 20130505012048) do
     t.datetime "updated_at",          :null => false
   end
 
-  add_index "user_actions", ["user_id", "item_id", "user_action_type_id"], :name => "primary_index"
+  add_index "user_actions", ["user_id", "item_id", "user_action_type_id"], :name => "primary_index", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
