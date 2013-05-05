@@ -1,7 +1,16 @@
 <li class="span3 clearfix">
-  <div class="thumbnail">
-    <a href="#"><img src="assets/img/212x192.jpg" alt=""></a>
+
+  <div class="box style-two" data-hipop="two">
+
+    <img src="assets/img/212x192.jpg" title="" alt="Img preview">
+
+
+    <%= link_to '', item_action_path(item, "like"), :remote => true, :class => "popup" %>
+    <%= link_to '', item_action_path(item, "own"), :remote => true, :class => "popup2" %>
+    <%= link_to '', item_action_path(item, "want"), :remote => true, :class => "popup3" %>
+
   </div>
+
   <div class="thumbSetting">
     <div class="thumbTitle">
       <h3>
@@ -26,5 +35,6 @@
         Details
       </button>
     </div>
+
   </div>
 </li>

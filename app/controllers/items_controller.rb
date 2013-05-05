@@ -80,4 +80,17 @@ class ItemsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def action
+    @act= params[:act]
+    @item = Item.find(params[:id])
+    respond_to do |format|
+      if current_user.send(@act + '_it', @item)
+        format.js
+      else
+        format.js
+      end
+    end
+
+  end
 end

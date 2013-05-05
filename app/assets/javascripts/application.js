@@ -12,3 +12,18 @@
 //= require jquery
 //= require_directory ./shoppest
 //= require jquery_ujs
+//= require jquery.zalki
+//= require jquery.easing.1.3
+
+
+$(window).load(function(){
+
+    $('.box').ZalkiHoverImg();
+
+});
+
+$(document).ready(function(){
+    $(".popup").click(function(){
+        //$.ajax()
+    })
+})

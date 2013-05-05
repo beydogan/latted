@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130503181649) do
+ActiveRecord::Schema.define(:version => 20130505012048) do
 
   create_table "attachments", :force => true do |t|
     t.string   "title"
@@ -56,7 +56,21 @@ ActiveRecord::Schema.define(:version => 20130503181649) do
     t.integer  "item_category_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
+    t.integer  "thumb_id"
   end
+
+  create_table "rails_admin_histories", :force => true do |t|
+    t.text     "message"
+    t.string   "username"
+    t.integer  "item"
+    t.string   "table"
+    t.integer  "month",      :limit => 2
+    t.integer  "year",       :limit => 5
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+  end
+
+  add_index "rails_admin_histories", ["item", "table", "month", "year"], :name => "index_rails_admin_histories"
 
   create_table "user_action_types", :force => true do |t|
     t.string   "name"
@@ -71,6 +85,8 @@ ActiveRecord::Schema.define(:version => 20130503181649) do
     t.datetime "created_at",          :null => false
     t.datetime "updated_at",          :null => false
   end
+
+  add_index "user_actions", ["user_id", "item_id", "user_action_type_id"], :name => "primary_index"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
