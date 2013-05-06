@@ -1,3 +1,5 @@
+<!-- TODO: Shop select will be added -->
+
 <%= form_for @item, :html => { :class => 'form-horizontal' } do |f| %>
     <div class="control-group">
       <%= f.label :title, :class => 'control-label' %>
@@ -18,15 +20,9 @@
       </div>
     </div>
     <div class="control-group">
-      <%= f.label :store_id, :class => 'control-label' %>
-      <div class="controls">
-        <%= f.number_field :store_id, :class => 'number_field' %>
-      </div>
-    </div>
-    <div class="control-group">
       <%= f.label :item_category_id, :class => 'control-label' %>
       <div class="controls">
-        <%= f.number_field :item_category_id, :class => 'number_field' %>
+        <%= f.select(:item_category_id, options_from_collection_for_select(ItemCategory.all, :id, :title)) %>
       </div>
     </div>
 
