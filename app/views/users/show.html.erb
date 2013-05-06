@@ -5,7 +5,7 @@
 
 <div class="span9">
 
-  <div class="productFilter clearfix no-top-margin">
+  <div class="productFilter clearfix no-top-margin" style="display: none">
 
     <div class="sortBy inline pull-left">
       Sort By
@@ -47,139 +47,33 @@
 
   </div><!--end productFilter-->
 
-  <div class="user-tabs">
-    <div class="row user-items">
+  <div id="user-tabs">
+    <div class="row user-items likes" style="display: none" >
+      <div class="titleHeader clearfix">
+        <h3><%= t "likes" %></h3>
+      </div>
       <ul class="vProductItemsTiny">
-        <li class="span3 clearfix">
-          <div class="thumbImage">
-            <a href="#"><img src="http://placehold.it/72x72" alt=""></a>
-          </div>
-          <div class="thumbSetting">
-            <div class="thumbTitle">
-              <a href="#" class="invarseColor">
-                Foliomania the title here
-              </a>
-              <br>
-              <small>23, Jan 2012</small>
-            </div>
-          </div>
-        </li>
-        <li class="span3 clearfix">
-          <div class="thumbImage">
-            <a href="#"><img src="http://placehold.it/72x72" alt=""></a>
-          </div>
-          <div class="thumbSetting">
-            <div class="thumbTitle">
-              <a href="#" class="invarseColor">
-                Foliomania the title here
-              </a>
-              <br>
-              <small>23, Jan 2012</small>
-            </div>
-          </div>
-        </li>
-        <li class="span3 clearfix">
-          <div class="thumbImage">
-            <a href="#"><img src="http://placehold.it/72x72" alt=""></a>
-          </div>
-          <div class="thumbSetting">
-            <div class="thumbTitle">
-              <a href="#" class="invarseColor">
-                Foliomania the title here
-              </a>
-              <br>
-              <small>23, Jan 2012</small>
-            </div>
-          </div>
-        </li>
-        <li class="span3 clearfix">
-          <div class="thumbImage">
-            <a href="#"><img src="http://placehold.it/72x72" alt=""></a>
-          </div>
-          <div class="thumbSetting">
-            <div class="thumbTitle">
-              <a href="#" class="invarseColor">
-                Foliomania the title here
-              </a>
-              <br>
-              <small>23, Jan 2012</small>
-            </div>
-          </div>
-        </li>
-        <li class="span3 clearfix">
-          <div class="thumbImage">
-            <a href="#"><img src="http://placehold.it/72x72" alt=""></a>
-          </div>
-          <div class="thumbSetting">
-            <div class="thumbTitle">
-              <a href="#" class="invarseColor">
-                Foliomania the title here
-              </a>
-              <br>
-              <small>23, Jan 2012</small>
-            </div>
-          </div>
-        </li>
+        <% @user.my_likes.each do |item| %>
+            <%= render :partial => 'item', :object => item %>
+        <% end %>
       </ul>
     </div>
-    <div class="row user-items">
+    <div class="row user-items owns" >
+      <div class="titleHeader clearfix">
+        <h3><%= t "owns" %></h3>
+      </div>
       <ul class="vProductItemsTiny">
-        <li class="span3 clearfix">
-          <div class="thumbImage">
-            <a href="#"><img src="http://placehold.it/72x72" alt=""></a>
-          </div>
-          <div class="thumbSetting">
-            <div class="thumbTitle">
-              <a href="#" class="invarseColor">
-                Foliomania the title here
-              </a>
-              <br>
-              <small>23, Jan 2012</small>
-            </div>
-          </div>
-        </li>
-        <li class="span3 clearfix">
-          <div class="thumbImage">
-            <a href="#"><img src="http://placehold.it/72x72" alt=""></a>
-          </div>
-          <div class="thumbSetting">
-            <div class="thumbTitle">
-              <a href="#" class="invarseColor">
-                Foliomania the title here
-              </a>
-              <br>
-              <small>23, Jan 2012</small>
-            </div>
-          </div>
-        </li>
-        <li class="span3 clearfix">
-          <div class="thumbImage">
-            <a href="#"><img src="http://placehold.it/72x72" alt=""></a>
-          </div>
-          <div class="thumbSetting">
-            <div class="thumbTitle">
-              <a href="#" class="invarseColor">
-                Foliomania the title here
-              </a>
-              <br>
-              <small>23, Jan 2012</small>
-            </div>
-          </div>
-        </li>
-        <li class="span3 clearfix">
-          <div class="thumbImage">
-            <a href="#"><img src="http://placehold.it/72x72" alt=""></a>
-          </div>
-          <div class="thumbSetting">
-            <div class="thumbTitle">
-              <a href="#" class="invarseColor">
-                Foliomania the title here
-              </a>
-              <br>
-              <small>23, Jan 2012</small>
-            </div>
-          </div>
-        </li>
+        <% @user.my_owns.each do |item| %>
+            <%= render :partial => 'item', :object => item %>
+        <% end %>
+
+      </ul>
+    </div>
+    <div class="row user-items wants" style="display: none">
+      <div class="titleHeader clearfix">
+        <h3><%= t "wants" %></h3>
+      </div>
+      <ul class="vProductItemsTiny">
         <li class="span3 clearfix">
           <div class="thumbImage">
             <a href="#"><img src="http://placehold.it/72x72" alt=""></a>
