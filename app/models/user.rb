@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  before_save :default_values
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -68,11 +69,22 @@ class User < ActiveRecord::Base
       action.item = arguments[0]
       action_type.save
       action.save
+      self.increment(action_name + "s")
+      self.save
     elsif match = /find_my_([_a-zA-Z]\w*)s/.match(method_id.to_s)
       action_name = match[1]
       user_actions.joins('LEFT JOIN user_action_types ON user_action_types.id = user_actions.user_action_type_id').where('user_action_types.name = "'+ action_name +'"')
     else
       super
     end
+  end
+
+
+  def default_values
+    self.wants ||= 0
+    self.likes ||= 0
+    self.owns ||= 0
+    self.followers ||= 0
+    self.follows ||= 0
   end
 end

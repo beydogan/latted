@@ -1,0 +1,25 @@
+
+<aside class="span3">
+
+  <div class="categories">
+    <div class="titleHeader clearfix">
+      <h3><%=@user.username%></h3>
+    </div><!--end titleHeader-->
+    <div class="blog-adds no-top-margin">
+      <a href="#"><img src="http://placehold.it/214x200" alt="Adds"></a>
+    </div>
+
+    <ul class="unstyled">
+      <li><a class="invarseColor" href="#"><i class="icon-star"></i>Owns (<%=@user.owns%>)</a></li>
+      <li><a class="invarseColor" href="#"><i class="icon-tags"></i>Wants (<%=@user.wants%>)</a></li>
+      <li><a class="invarseColor" href="#"><i class="icon-heart"></i>Likes (<%=@user.likes%>)</a></li>
+    </ul>
+
+    <ul class="unstyled">
+      <li><a class="invarseColor" href="#">Followers</a></li>
+      <li><a class="invarseColor" href="#">Following</a></li>
+    </ul>
+  </div><!--end categories-->
+
+
+</aside><!--end aside-->

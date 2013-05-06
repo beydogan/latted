@@ -5,4 +5,5 @@ class UserAction < ActiveRecord::Base
   belongs_to :user
   belongs_to :item
   belongs_to :user_action_type
+
 end
