@@ -8,6 +8,7 @@ class Item < ActiveRecord::Base
   has_many :actioned, :through => :user_actions, :source => :user
 
   belongs_to :item_category
+  belongs_to :user
 
   def thumb
     attachments.find_by_id(self.thumb_id)
