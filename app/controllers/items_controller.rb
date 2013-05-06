@@ -40,7 +40,11 @@ class ItemsController < ApplicationController
   # POST /items
   # POST /items.json
   def create
-    @item = Item.new(params[:item])
+    if current_user
+      @item = current_user.items.new(params[:item])
+    else
+      @item = Item.new(params[:item])
+    end
 
     respond_to do |format|
       if @item.save
