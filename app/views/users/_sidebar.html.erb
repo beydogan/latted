@@ -9,10 +9,10 @@
       <a href="#"><img src="http://placehold.it/214x200" alt="Adds"></a>
     </div>
 
-    <ul class="unstyled">
-      <li><a class="invarseColor" href="#"><i class="icon-star"></i>Owns (<%=@user.owns%>)</a></li>
-      <li><a class="invarseColor" href="#"><i class="icon-tags"></i>Wants (<%=@user.wants%>)</a></li>
-      <li><a class="invarseColor" href="#"><i class="icon-heart"></i>Likes (<%=@user.likes%>)</a></li>
+    <ul class="unstyled tabs">
+      <li><a class="invarseColor" href="#" data-tab="owns"><i class="icon-star"></i>Owns (<%=@user.owns%>)</a></li>
+      <li><a class="invarseColor" href="#" data-tab="wants"><i class="icon-tags"></i>Wants (<%=@user.wants%>)</a></li>
+      <li><a class="invarseColor" href="#" data-tab="likes"><i class="icon-heart"></i>Likes (<%=@user.likes%>)</a></li>
     </ul>
 
     <ul class="unstyled">

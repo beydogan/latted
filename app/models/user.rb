@@ -71,9 +71,10 @@ class User < ActiveRecord::Base
       action.save
       self.increment(action_name + "s")
       self.save
-    elsif match = /find_my_([_a-zA-Z]\w*)s/.match(method_id.to_s)
+    elsif match = /my_([_a-zA-Z]\w*)s/.match(method_id.to_s)
       action_name = match[1]
-      user_actions.joins('LEFT JOIN user_action_types ON user_action_types.id = user_actions.user_action_type_id').where('user_action_types.name = "'+ action_name +'"')
+
+      user_actions.joins('LEFT JOIN user_action_types ON user_action_types.id = user_actions.user_action_type_id').where('user_action_types.name = "'+ action_name +'"').collect{|a| a.item }
     else
       super
     end
