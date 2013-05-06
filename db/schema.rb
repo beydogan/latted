@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130505012048) do
+ActiveRecord::Schema.define(:version => 20130506145931) do
 
   create_table "attachments", :force => true do |t|
     t.string   "title"
@@ -54,9 +54,10 @@ ActiveRecord::Schema.define(:version => 20130505012048) do
     t.integer  "store_id"
     t.integer  "user_id"
     t.integer  "item_category_id"
-    t.datetime "created_at",       :null => false
-    t.datetime "updated_at",       :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.integer  "thumb_id"
+    t.decimal  "rate",             :precision => 8, :scale => 2
   end
 
   create_table "rails_admin_histories", :force => true do |t|

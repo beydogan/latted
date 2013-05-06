@@ -18,6 +18,7 @@ Sociality::Application.routes.draw do
   get "home/index"
 
   resources :items
+  resources :users
 
 
   get 'items/:id/action/:act' => 'items#action', :as => "item_action"
