@@ -45,10 +45,13 @@
     <ul class="pull-right inline">
       <% if current_user %>
           <li>
+            <a class="invarseColor" href="<%=user_url(current_user.id)%>">Profile</a>
+          </li>
+          <li class="sep-vertical"></li>
+          <li>
               <%= link_to("Çıkış Yap", destroy_user_session_path, :method => :delete, :class=> "invarseColor") %>
           </li>
-      <% else %>
-          <li>
+      <% else %><li>
             <a class="invarseColor" href="<%=new_user_session_url%>">Login</a>
           </li>
           <li class="sep-vertical"></li>
