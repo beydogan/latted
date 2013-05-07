@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
 
   has_many :followings, :foreign_key => "follower_id",
            :dependent => :destroy
-  has_many :following, :through => :followings, :source => :followed
+  has_many :followed_users, :through => :followings, :source => :followed
 
   has_many :reverse_relationships, :foreign_key => "followed_id",
            :class_name => "Following",
