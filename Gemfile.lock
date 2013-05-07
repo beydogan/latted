@@ -173,6 +173,7 @@ PLATFORMS
 DEPENDENCIES
   cancan
   devise
+  execjs
   faker
   jquery-rails
   less-rails-bootstrap

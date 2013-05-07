@@ -1,8 +1,9 @@
 #############################################################
 #	Application
 #############################################################
+load 'deploy/assets'
 
-set :application, "social"
+set :application, "app.mehmet.pw"
 set :deploy_to, "/var/www/#{application}"
 
 #############################################################
@@ -29,6 +30,7 @@ set :repository,  "git@s.mehmet.pw:social.git"
 set :svn_username, "git"
 set :svn_password, "123321-"
 set :checkout, "export"
+load 'deploy/assets'
 
 #############################################################
 #	Passenger
