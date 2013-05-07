@@ -22,4 +22,13 @@ class Item < ActiveRecord::Base
       self.attachments.empty? ? "http://placehold.it/72x72" : self.attachments.first.attach.url(:small)
     end
   end
+
+  def method_missing(method_id, *arguments)
+    if match = /who_([_a-zA-Z]\w*)s/.match(method_id.to_s)
+      action_name = match[1]
+      user_actions.joins('LEFT JOIN user_action_types ON user_action_types.id = user_actions.user_action_type_id').where('user_action_types.name = "'+ action_name +'"').collect{|a| a.item }
+    else
+      super
+    end
+  end
 end

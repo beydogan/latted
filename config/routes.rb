@@ -22,4 +22,6 @@ Sociality::Application.routes.draw do
 
 
   get 'items/:id/action/:act' => 'items#action', :as => "item_action"
+  get 'users/:id/follow' => 'users#follow', :as => "follow_user"
+  get 'users/:id/unfollow' => 'users#unfollow', :as => "unfollow_user"
 end
