@@ -9,6 +9,19 @@
       <a href="#"><img src="http://placehold.it/214x200" alt="Adds"></a>
     </div>
 
+    <% if !@me %>
+        <% if current_user.following?(@user).nil? %>
+            <div class="user-follow">
+              <%= link_to (t "Follow"), follow_user_path(@user.id), :remote => true, :class => "btn btn-primary btn-small btn-block follow-button"%>
+              <%= link_to (t "Unfollow"), unfollow_user_path(@user.id), :remote => true, :class => "btn btn-primary btn-small btn-block unfollow-button", :style=> "display:none"%>
+            </div>
+        <% else %>
+            <div class="user-follow">
+              <%= link_to (t "Follow"), follow_user_path(@user.id), :remote => true, :class => "btn btn-primary btn-small btn-block follow-button hide"%>
+              <%= link_to (t "Unfollow"), unfollow_user_path(@user.id), :remote => true, :class => "btn btn-primary btn-small btn-block unfollow-button"%>
+            </div>
+        <% end %>
+    <% end %>
     <ul class="unstyled tabs">
       <li><a class="invarseColor" href="#" data-tab="owns"><i class="icon-star"></i>Owns (<%=@user.owns%>)</a></li>
       <li><a class="invarseColor" href="#" data-tab="wants"><i class="icon-tags"></i>Wants (<%=@user.wants%>)</a></li>

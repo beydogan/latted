@@ -1,4 +1,4 @@
-<li class="span3 clearfix">
+<li class="span3 clearfix user-item" id="i-<%=item.id%>">
   <div class="thumbImage">
     <a href="#"><img src="<%=item.thumb_url%>" alt=""></a>
   </div>
@@ -10,5 +10,10 @@
       <br>
       <small><%=item.created_at%></small>
     </div>
+  </div>
+  <div class="item-more" >
+    Likes: <%=item.who_likes.count%>
+    Wants: <%=item.who_wants.count%>
+    Owns: <%=item.who_owns.count%>
   </div>
 </li>
