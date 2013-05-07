@@ -88,7 +88,7 @@
       <div class="titleHeader clearfix">
         <h3><%= t "followers" %></h3>
       </div>
-      <ul class="vProductItemsTiny">
+      <ul class="user-list">
         <% if @user.followers.each do |user| %>
             <%= render :partial => 'user', :object => user %>
         <% end.empty? %>
@@ -100,7 +100,7 @@
       <div class="titleHeader clearfix">
         <h3><%= t "following" %></h3>
       </div>
-      <ul class="vProductItemsTiny">
+      <ul class="user-list">
         <% if @user.followed_users.each do |user| %>
             <%= render :partial => 'user', :object => user %>
         <% end.empty? %>
