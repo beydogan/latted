@@ -84,6 +84,30 @@
           <% end %>
       </ul>
     </div>
+    <div class="row user-items followers" style="display: none">
+      <div class="titleHeader clearfix">
+        <h3><%= t "followers" %></h3>
+      </div>
+      <ul class="vProductItemsTiny">
+        <% if @user.followers.each do |user| %>
+            <%= render :partial => 'user', :object => user %>
+        <% end.empty? %>
+            Nothing to show
+        <% end %>
+      </ul>
+    </div>
+    <div class="row user-items following" style="display: none">
+      <div class="titleHeader clearfix">
+        <h3><%= t "following" %></h3>
+      </div>
+      <ul class="vProductItemsTiny">
+        <% if @user.followed_users.each do |user| %>
+            <%= render :partial => 'user', :object => user %>
+        <% end.empty? %>
+            Nothing to show
+        <% end %>
+      </ul>
+    </div>
   </div>
 
 
