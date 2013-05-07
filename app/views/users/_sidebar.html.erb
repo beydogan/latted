@@ -22,16 +22,18 @@
             </div>
         <% end %>
     <% end %>
+
+    <ul class="unstyled tabs">
+      <li><a class="invarseColor" href="#" data-tab="followers"><i class="icon-eye-open"></i>Followers (<%=@user.followers.count%>)</a></li>
+      <li><a class="invarseColor" href="#" data-tab="following"><i class="icon-user"></i>Following (<%=@user.followed_users.count%>)</a></li>
+    </ul>
+
     <ul class="unstyled tabs">
       <li><a class="invarseColor" href="#" data-tab="owns"><i class="icon-star"></i>Owns (<%=@user.owns%>)</a></li>
       <li><a class="invarseColor" href="#" data-tab="wants"><i class="icon-tags"></i>Wants (<%=@user.wants%>)</a></li>
       <li><a class="invarseColor" href="#" data-tab="likes"><i class="icon-heart"></i>Likes (<%=@user.likes%>)</a></li>
     </ul>
 
-    <ul class="unstyled tabs">
-      <li><a class="invarseColor" href="#" data-tab="followers">Followers</a></li>
-      <li><a class="invarseColor" href="#" data-tab="following">Following</a></li>
-    </ul>
   </div><!--end categories-->
 
 

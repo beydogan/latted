@@ -1,1 +1,8 @@
-<%=user.username%>
+<li class="span2 clearfix user">
+  <div class="user-thumb">
+    <a href="<%=user_url(user.id)%>"><img src="/assets/img/72x72.jpg" alt="product image"></a>
+  </div>
+  <div class="user-username">
+    <%=link_to user.username, user_path(user.id)%>
+  </div>
+</li>
