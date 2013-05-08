@@ -22,6 +22,7 @@ class User < ActiveRecord::Base
 
   ## FOLLOWING AND FOLLOWERS
   has_many :items
+  has_many :comments
 
   has_many :followings, :foreign_key => "follower_id",
            :dependent => :destroy
