@@ -1,6 +1,9 @@
 Sociality::Application.routes.draw do
 
 
+  resources :comments
+
+
   mount RailsAdmin::Engine => '/admin', :as => 'rails_admin'
 
   resources :attachments

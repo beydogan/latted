@@ -4,6 +4,7 @@ class Item < ActiveRecord::Base
   has_many :attachments, :foreign_key => "attachable_id"
   accepts_nested_attributes_for :attachments
 
+  has_many :comments
   has_many :user_actions
   has_many :actioned, :through => :user_actions, :source => :user
 
