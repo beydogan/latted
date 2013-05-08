@@ -2,7 +2,7 @@
 
   <div class="box style-two" data-hipop="two">
 
-    <img src="assets/img/212x192.jpg" title="<%=item.title%>" alt="<%=item.title%>">
+    <img src="<%=item.thumb_url("medium2")%>" title="<%=item.title%>" alt="<%=item.title%>">
 
     <%= link_to '', item_action_path(item, "like"), :remote => true, :class => "popup like_" + item.id.to_s %>
     <%= link_to '', item_action_path(item, "own"), :remote => true, :class => "popup2 own_" + item.id.to_s %>

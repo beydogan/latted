@@ -14,12 +14,12 @@ class Item < ActiveRecord::Base
     attachments.find_by_id(self.thumb_id)
   end
 
-  def thumb_url
+  def thumb_url(size)
     t = self.thumb
     if t
       t
     else
-      self.attachments.empty? ? "http://placehold.it/72x72" : self.attachments.first.attach.url(:small)
+      self.attachments.empty? ? ApplicationController.helpers.default_url(size) : self.attachments.first.attach.url(size)
     end
   end
 
