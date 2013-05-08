@@ -1,9 +1,11 @@
 <% images = @item.images%>
 <div class="product-img">
-  <a class="" href="<%=images.first[0]%>"><img src="<%=images.first[0]%>" alt=""></a>
+    <% images.each_with_index do |img, i| %>
+      <a class="fancybox" href="<%= img[0] %>" <%= "style=display:none" if (i != 0) %>><img src="<%= img[0] %>" alt=""></a>
+    <% end %>
 </div><!--end product-img-->
 <div class="product-img-thumb">
     <% images.each_with_index do |img, i| %>
-        <a class="img-<%=i%>" href="<%= img[1] %>"><img src="<%= img[1] %>" alt=""></a>
+        <a class="img-thumb-<%=i%>" href="<%= img[1] %>"><img src="<%= img[1] %>" alt=""></a>
     <% end %>
 </div><!--product-img-thumb-->
