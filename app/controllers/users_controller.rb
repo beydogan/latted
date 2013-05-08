@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @me = (current_user.id == @user.id)
+    @me = current_user.nil? ? false : (current_user.id == @user.id)
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @item }
