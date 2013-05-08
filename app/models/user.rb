@@ -89,4 +89,8 @@ class User < ActiveRecord::Base
     self.followers ||= 0
     self.follows ||= 0
   end
+
+  def display_name
+    self.username
+  end
 end
