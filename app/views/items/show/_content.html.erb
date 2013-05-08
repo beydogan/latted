@@ -1,0 +1,21 @@
+<div class="span4">
+  <div class="product-set">
+    <div class="product-rate clearfix">
+      <ul class="rating">
+        <% @item.rate.floor.times do  %>
+            <li><i class="icon-star"></i></li>
+        <% end  %>
+        <% if @item.rate % 1 != 0  %>
+            <li><i class="icon-star-half"></i></li>
+        <% end  %>
+      </ul>
+    </div><!--end product-inputs-->
+    <div class="product-info">
+      <%= @item.content %>
+    </div><!--end product-info-->
+    <div class="product-inputs">
+
+
+    </div><!--end product-inputs-->
+  </div><!--end product-set-->
+</div><!--end span4-->
