@@ -23,6 +23,10 @@ class Item < ActiveRecord::Base
     end
   end
 
+  def images
+    attachments.collect {|a| [a.attach(:medium), a.attach(:small)] }
+  end
+
   def method_missing(method_id, *arguments)
     if match = /who_([_a-zA-Z]\w*)s/.match(method_id.to_s)
       action_name = match[1]
