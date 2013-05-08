@@ -1,0 +1,10 @@
+<% if @comment.errors.any? %>
+showError("<%= escape_javascript(error_messages_for(@comment))%>");
+<% else %>
+//showMsg("Todo List Added");
+var new_comment = "<%= escape_javascript(render(@comment)) %>";
+
+$("#read-review").append(new_comment).show('slow');
+$("#read-review > div:last").effect('highlight', {}, 1200)
+$("#comment_content").val("");
+<% end %>

@@ -1,79 +1,9 @@
 <div class="product-tab">
 
-    <div id="read-review">
-      <div class="single-review clearfix">
-        <div class="review-header">
-          <h4>John Doe</h4>
-          <small>26/11/2012</small>
-        </div><!--end review-header-->
+  <%= render :partial => 'items/show/comment_list' %>
 
-        <div class="review-body">
-          <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-        </div><!--end review-body-->
-      </div><!--end single-review-->
-      <div class="single-review clearfix">
-        <div class="review-header">
-          <h4>John Doe</h4>
-          <small>26/11/2012</small>
-        </div><!--end review-header-->
 
-        <div class="review-body">
-          <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-        </div><!--end review-body-->
-      </div><!--end single-review-->
-      <div class="single-review clearfix">
-        <div class="review-header">
-          <h4>John Doe</h4>
-          <small>26/11/2012</small>
-        </div><!--end review-header-->
-
-        <div class="review-body">
-          <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-        </div><!--end review-body-->
-      </div><!--end single-review-->
-    </div>
-
-    <div id="make-review">
-      <form method="post" action="http://egythemes.com/shoppest/page" class="form-horizontal">
-        <div class="control-group">
-          <label class="control-label" for="inputName">Your Name <span class="text-error">*</span></label>
-          <div class="controls">
-            <input type="text" name="#" id="inputName" placeholder="John Doe...">
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label" for="inputReview">Your Review <span class="text-error">*</span></label>
-          <div class="controls">
-            <textarea name="#" id="inputReview" placeholder="Put your review here..."></textarea>
-          </div>
-        </div>
-        <div class="control-group">
-          <label class="control-label">Your Rate <span class="text-error">*</span></label>
-          <div class="controls">
-            <label class="radio inline">From Bad</label>
-            <label class="radio inline">
-              <input type="radio" name="rate" value="option1">
-            </label>
-            <label class="radio inline">
-              <input type="radio" name="rate" value="option2">
-            </label>
-            <label class="radio inline">
-              <input type="radio" name="rate" value="option3">
-            </label>
-            <label class="radio inline">
-              <input type="radio" name="rate" value="option3">
-            </label>
-            <label class="radio inline">
-              <input type="radio" name="rate" value="option3">
-            </label>
-            <label class="radio inline">To Good</label>
-          </div>
-        </div>
-        <div class="control-group">
-          <div class="controls">
-            <button type="submit" class="btn btn-primary" name="submit">Add Review</button>
-          </div>
-        </div>
-      </form><!--end form-->
+  <div id="make-review">
+        <%= render :partial => 'items/show/comment' %>
     </div>
 </div><!--end product-tab-->
