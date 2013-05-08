@@ -2,8 +2,7 @@
 
   <div class="box style-two" data-hipop="two">
 
-    <img src="assets/img/212x192.jpg" title="" alt="Img preview">
-
+    <img src="assets/img/212x192.jpg" title="<%=item.title%>" alt="<%=item.title%>">
 
     <%= link_to '', item_action_path(item, "like"), :remote => true, :class => "popup like_" + item.id.to_s %>
     <%= link_to '', item_action_path(item, "own"), :remote => true, :class => "popup2 own_" + item.id.to_s %>
@@ -13,27 +12,27 @@
 
   <div class="thumbSetting">
     <div class="thumbTitle">
+      <div class="pull-right">
+        <ul class="rating clearfix">
+        <% item.rate.floor.times do  %>
+            <li><i class="icon-star"></i></li>
+        <% end  %>
+        <% if item.rate % 1 != 0  %>
+            <li><i class="icon-star-half"></i></li>
+        <% end  %>
+        </ul>
+      </div>
+      <div class="pull-left">
       <h3>
-        <a href="#" class="invarseColor"><%=item.title%></a>
+        <a href="<%= item_url(item.id) %>" class="invarseColor"><%=item.title%></a>
       </h3>
+      </div>
     </div>
-    <ul class="rating clearfix">
-      <li><i class="star-on"></i></li>
-      <li><i class="star-on"></i></li>
-      <li><i class="star-on"></i></li>
-      <li><i class="star-on"></i></li>
-      <li><i class="star-off"></i></li>
-    </ul>
-    <div class="product-desc">
-      <p>
-        Praesent ac condimentum felis. Nulla at nisl orci, at dignissim dolor...
-      </p>
-    </div>
-
-    <div class="thumbButtons">
-      <button class="btn btn-primary btn-small btn-block">
-        Details
-      </button>
+    <div style="clear:both"></div>
+    <div class="thumbButtons ">
+      <a href="<%= item_url(item.id) %>" class="btn btn-primary btn-block">
+        More
+      </a>
     </div>
 
   </div>
