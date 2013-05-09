@@ -2,8 +2,9 @@
 
   <%= render :partial => 'items/show/comment_list' %>
 
-
-  <div id="make-review">
-        <%= render :partial => 'items/show/comment' %>
-    </div>
+  <% if current_user %>
+      <div id="make-review">
+            <%= render :partial => 'items/show/comment' %>
+        </div>
+  <% end %>
 </div><!--end product-tab-->
