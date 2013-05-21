@@ -28,6 +28,10 @@ class Item < ActiveRecord::Base
     attachments.collect {|a| [a.attach(:medium), a.attach(:small)] }
   end
 
+  def who_actioned(action)
+    user_actions.joins('LEFT JOIN user_action_types ON user_action_types.id = user_actions.user_action_type_id').where('user_action_types.name = "'+ action +'"').collect{|a| a.user }
+  end
+
   def method_missing(method_id, *arguments)
     if match = /who_([_a-zA-Z]\w*)s/.match(method_id.to_s)
       action_name = match[1]
