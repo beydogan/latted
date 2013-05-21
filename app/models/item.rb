@@ -1,4 +1,6 @@
 class Item < ActiveRecord::Base
+  before_save :default_values
+
   attr_accessible :content, :item_category_id, :link, :store_id, :title, :user_id, :attachments_attributes
 
   has_many :attachments, :foreign_key => "attachable_id"
@@ -39,5 +41,9 @@ class Item < ActiveRecord::Base
     else
       super
     end
+  end
+
+  def default_values
+    self.rate ||= 0
   end
 end
