@@ -17,6 +17,11 @@
 
             <%= render :partial => 'items/show/content' %>
 
+            <div class="item-actioned-stats">
+                <a href="#who_actioned_list" role="button" data-item-id="<%=@item.id%>" data-action="like" data-toggle="modal"><%= t 'Likes'  %></a>&nbsp;<%=@item.who_likes.count%>
+                <a href="#who_actioned_list" role="button" data-item-id="<%=@item.id%>" data-action="want" data-toggle="modal"><%= t 'Wants'  %></a>&nbsp;<%=@item.who_wants.count%>
+                <a href="#who_actioned_list" role="button" data-item-id="<%=@item.id%>" data-action="own" data-toggle="modal"><%= t 'Owns'  %></a>&nbsp;<%=@item.who_owns.count%>
+            </div>
 
           </div><!--end product-details-->
 
@@ -30,4 +35,7 @@
     <%= render 'sidebar' %>
 
 </div>
+
+
+<%= render :partial => 'who_actioned_list_modal.html' %>
 

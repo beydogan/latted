@@ -95,6 +95,13 @@ class ItemsController < ApplicationController
         format.js
       end
     end
+  end
 
+  def who_actioned
+    @item = Item.find(params[:id])
+    @list = @item.who_actioned(params[:act])
+    respond_to do |format|
+        format.js
+    end
   end
 end
