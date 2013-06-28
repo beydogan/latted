@@ -1,9 +1,18 @@
 #############################################################
 #	Application
 #############################################################
+# Add RVM's lib directory to the load path.
+
+# Load RVM's capistrano plugin.
+require "rvm/capistrano"
+set :rvm_path, "/usr/local/rvm/"
+set :rvm_bin_path, "/usr/local/rvm/bin/"
+require "bundler/capistrano"
+
+
 load 'deploy/assets'
-set :root_password, "123321-"
-set :application, "app.mehmet.pw"
+
+set :application, "sociality.mehmet.pw"
 set :deploy_to, "/var/www/#{application}"
 
 #############################################################
@@ -11,14 +20,14 @@ set :deploy_to, "/var/www/#{application}"
 #############################################################
 
 default_run_options[:pty] = true
-set :use_sudo, true
+set :use_sudo, false
 
 #############################################################
 #	Servers
 #############################################################
 
-set :user, "root"
-set :domain, "s.mehmet.pw"
+set :user, "passenger"
+set :domain, "server1.mehmet.pw"
 server domain, :app, :web
 role :db, domain, :primary => true
 
@@ -26,7 +35,7 @@ role :db, domain, :primary => true
 #	Subversion
 #############################################################
 
-set :repository,  "git@s.mehmet.pw:social.git"
+set :repository,  "git@server1.mehmet.pw:repos/sociality.git"
 set :svn_username, "git"
 set :svn_password, "123321-"
 set :scm_passphrase, "123321-"
