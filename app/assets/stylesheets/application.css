@@ -11,7 +11,7 @@
  *= require_self
  *= require ./ipictures/bootstrap.min
  *= require ./ipictures/bootstrap-responsive.min
- *= require ./ipictures/font-awesome.min
+ *= require /font-awesome
  *= require ./ipictures/fc-webicons
- *= require ./ipictures/styles
+ *= require ./styles
  */

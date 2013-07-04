@@ -34,4 +34,7 @@ Sociality::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
+
 end
