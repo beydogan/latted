@@ -12,7 +12,7 @@ require "bundler/capistrano"
 
 load 'deploy/assets'
 
-set :application, "sociality.mehmet.pw"
+set :application, "latted.me"
 set :deploy_to, "/var/www/#{application}"
 
 #############################################################
@@ -35,7 +35,7 @@ role :db, domain, :primary => true
 #	Subversion
 #############################################################
 
-set :repository,  "git@server1.mehmet.pw:repos/sociality.git"
+set :repository,  "https://github.com/dedeler/latted.git"
 set :svn_username, "git"
 set :svn_password, "123321-"
 set :scm_passphrase, "123321-"
