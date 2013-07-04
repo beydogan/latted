@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= content_for?(:title) ? Sociality::Application::APP_NAME + " :: " + yield(:title) : "Sociality" %></title>
+  <title><%= content_for?(:title) ? Sociality::Application::APP_NAME + " :: " + yield(:title) : "Latted!" %></title>
   <meta name="description" content="">
   <meta name="author" content="">
   <%= stylesheet_link_tag "application", :media => "all" %>
@@ -14,18 +14,10 @@
 </head>
 <body>
 
+    <%= render 'layouts/navigation' %>
 
-    <div id="wrapper">
-        <%= render 'layouts/header' %>
+    <%=yield %>
 
-        <div class="container">
-            <% render 'layouts/featured' %>
-            <%=yield %>
-        </div>
-        <!--end conatiner-->
-
-        <%= render 'layouts/footer' %>
-    </div>
-    <!--end wrapper-->
+    <%= render "layouts/footer" %>
 </body>
 </html>

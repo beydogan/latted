@@ -18,7 +18,7 @@ end
 module Sociality
   class Application < Rails::Application
     ITEM_IMAGE_SIZES = { :large => '950x400#', :medium2 => "212x192#", :medium => "372x370#", :small => "72x72>" }
-    APP_NAME = "Socaility"
+    APP_NAME = "Latted!"
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
