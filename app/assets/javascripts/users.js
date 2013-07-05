@@ -7,7 +7,7 @@ $(function() {
                 $("#user-tabs ." + target).fadeIn("slow");
             }
         });
-
+        $(".tab-title").html($(this).data("title"));
     });
 
     $(".user-item").hover(
