@@ -31,8 +31,8 @@
 
         <div class="widget">
             <ul class="unstyled tabs">
-              <li><a class="" href="#" data-tab="comments"><i class="icon-star"></i><%= t 'Comments' %> </a></li>
-              <li><a class="" href="#" data-tab="tags"><i class="icon-tags"></i><%= t 'Tags' %> </a></li>
+              <li><a class="" href="#" data-tab="comments" data-title="<%= raw(t('User Comments')) %>"><i class="icon-star"></i><%= t 'Comments' %> </a></li>
+              <li><a class="" href="#" data-tab="tags" data-title="<%=  h t 'User Tags' %>"><i class="icon-tags"></i><%= t 'Tags' %> </a></li>
             </ul>
         </div>
         <!-- end widget -->
@@ -50,7 +50,7 @@
         <div class="span9">
           <div class="row-fluid">
             <div class="span8">
-              <h4 class="title"><%= "User Comments" %></h4>
+              <h4 class="title tab-title" ><%= "User Comments" %></h4>
             </div>
             <!-- end span8 -->
             <div class="span4">
