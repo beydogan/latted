@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Rails4try::Application.load_tasks
+Sociality::Application.load_tasks

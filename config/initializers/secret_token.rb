@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Rails4try::Application.config.secret_key_base = '7c07560dff1a47093bd4078ee85d331326e75f3dac706197c7e1843971fa72726da7f24f80cd84e12573f2b08febba0b417648a26bc03ac3ec19edee6d0fcd4c'
+Sociality::Application.config.secret_key_base = '7c07560dff1a47093bd4078ee85d331326e75f3dac706197c7e1843971fa72726da7f24f80cd84e12573f2b08febba0b417648a26bc03ac3ec19edee6d0fcd4c'
