@@ -1,4 +1,4 @@
-Sociality::Application.routes.draw do
+Latted::Application.routes.draw do
 
   resources :comments
   resources :attachments

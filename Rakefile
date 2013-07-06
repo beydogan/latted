@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Sociality::Application.load_tasks
+Latted::Application.load_tasks
