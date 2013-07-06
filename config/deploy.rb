@@ -56,6 +56,16 @@ after :deploy, "passenger:restart"
 
 set :max_asset_age, 15 ## Set asset age in minutes to test modified date against.
 
+
+namespace :db do
+  task :db_config, :except => { :no_release => true }, :role => :app do
+    run "cp -f ~/database.yml #{release_path}/config/database.yml"
+  end
+end
+
+
+after "deploy:finalize_update", "db:db_config"
+
 #namespace :deploy do
 #  namespace :assets do
 #    task :precompile, :roles => :web, :except => { :no_release => true } do

@@ -8,6 +8,8 @@ Bundler.require(:default, Rails.env)
 
 module Latted
   class Application < Rails::Application
+    ITEM_IMAGE_SIZES = { :large => '950x400#', :medium2 => "212x192#", :medium => "372x370#", :small => "72x72>" }
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
