@@ -39,6 +39,8 @@ gem "paperclip", "~> 3.0"
 gem 'devise', '3.0.0.rc'
 gem 'protected_attributes'
 
+gem 'cancan'
+gem "paperclip", "~> 3.0"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
