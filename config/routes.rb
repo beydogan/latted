@@ -1,4 +1,4 @@
-Rails4try::Application.routes.draw do
+Sociality::Application.routes.draw do
 
   resources :comments
   resources :attachments
