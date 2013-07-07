@@ -23,7 +23,6 @@ $(window).load(function(){
 });
 
 $(document).ready(function(){
-    $(".popup").click(function(){
-        //$.ajax()
-    })
+    $('.tooltip-trig').tooltip()
+
 })

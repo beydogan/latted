@@ -31,81 +31,28 @@
         </ul> <!-- end nav -->
       </div><!--/.nav-collapse -->
 
-      <a class="brand" href="index-2.html"><i class="icon-coffee"></i> Latted!</a>
-
+      <a class="brand" href="<%=root_url%>"><i class="icon-coffee"></i> Latted!</a>
       <div class="pull-right">
         <ul class="unstyled inline user-interaction">
-          <li><a href="#"><span class="user">&#128100;</span></a></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="bucket">&#128092;</span> <span class="notification">3</span></a>
+            <% if current_user %>
+                <li>
+                    <%= link_to destroy_user_session_path, :method => :delete do %>
+                        <span class="user tooltip-trig" data-toggle="tooltip" data-placement="bottom" title="<%= t "Logout" %>">&#59136;</span>
+                    <% end %>
+                </li>
+            <% else %>
+                <li>
+                    <%= link_to new_user_registration_url do %>
+                        <span class="user tooltip-trig" data-toggle="tooltip" data-placement="bottom" title="<%= t "Sign Up" %>">&#59136;</span>
+                    <% end %>
+                </li>
+                <li>
+                    <%= link_to new_user_session_url do %>
+                      <span class="user tooltip-trig" data-toggle="tooltip" data-placement="bottom" title="<%= t "Login" %>">&#128275;</span>
+                    <% end %>
+                </li>
 
-            <ul class="dropdown-menu">
-              <li>
-                <div class="row-fluid">
-                  <div class="span5">
-                    <div class="img-basket">
-                      <img src="assets/img/work/12.jpg" alt="img" />
-                    </div> <!-- end img-basket -->
-                  </div> <!-- end span5 -->
-                  <div class="span6">
-                    <div class="img-basket-info">
-                      <a href="#">#589347128</a>
-                      <a href="#" class="tag">Nature</a>
-                    </div><!--  end img-basket-info -->
-                  </div> <!-- end span6 -->
-                  <div class="span1">
-                    <a href="#" class="basket-remover"><i class="icon-remove"></i></a>
-                  </div> <!-- end span1 -->
-                </div> <!-- end row-fluid -->
-              </li>
-              <li>
-                <div class="row-fluid">
-                  <div class="span5">
-                    <div class="img-basket">
-                      <img src="assets/img/work/13.jpg" alt="img" />
-                    </div> <!-- end img-basket -->
-                  </div> <!-- end span5 -->
-                  <div class="span6">
-                    <div class="img-basket-info">
-                      <a href="#">#589347128</a>
-                      <a href="#" class="tag">Nature</a>
-                    </div><!--  end img-basket-info -->
-                  </div> <!-- end span6 -->
-                  <div class="span1">
-                    <a href="#" class="basket-remover"><i class="icon-remove"></i></a>
-                  </div> <!-- end span1 -->
-                </div> <!-- end row-fluid -->
-              </li>
-              <li>
-                <div class="row-fluid">
-                  <div class="span5">
-                    <div class="img-basket">
-                      <img src="assets/img/work/14.jpg" alt="img" />
-                    </div> <!-- end img-basket -->
-                  </div> <!-- end span5 -->
-                  <div class="span6">
-                    <div class="img-basket-info">
-                      <a href="#">#589347128</a>
-                      <a href="#" class="tag">Nature</a>
-                    </div><!--  end img-basket-info -->
-                  </div> <!-- end span6 -->
-                  <div class="span1">
-                    <a href="#" class="basket-remover"><i class="icon-remove"></i></a>
-                  </div> <!-- end span1 -->
-                </div> <!-- end row-fluid -->
-              </li>
-              <li>
-                <div class="row-fluid">
-                  <div class="span6">
-                    <a href="#" class="btn btn-large btn-block">Checkout</a>
-                  </div>
-                  <div class="span6">
-                    <a href="#" class="btn btn-large btn-block">Save</a>
-                  </div>
-                </div> <!-- end row-fluid -->
-              </li>
-            </ul>
-          </li>
+          <% end %>
         </ul>  <!-- end user-interaction -->
       </div> <!-- end pull-right -->
     </div> <!-- end container -->

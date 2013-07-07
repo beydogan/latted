@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  Sign Up: "Sign Up"
+  Login: "Login"
+  Logout: "Logout"
