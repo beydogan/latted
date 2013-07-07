@@ -17,6 +17,6 @@ Latted::Application.routes.draw do
 
   get 'items/:id/action/:act' => 'items#action', :as => "item_action"
   get 'items/:id/who/:act' => 'items#who_actioned', :as => "item_who_actioned"
-  get 'users/:id/follow' => 'users#follow', :as => "follow_user"
-  get 'users/:id/unfollow' => 'users#unfollow', :as => "unfollow_user"
+  get 'users/:id/latte' => 'users#follow', :as => "follow_user"
+  get 'users/:id/delatte' => 'users#unfollow', :as => "unfollow_user"
 end
