@@ -36,11 +36,11 @@
         <ul class="unstyled inline user-interaction">
             <% if current_user %>
                 <li>
-                  <span class="username"><%= current_user.username %></span>
+                  <%= link_to user_path(current_user) do %><span class="username"><%= current_user.username %></span><% end %>
                 </li>
                 <li>
                     <%= link_to destroy_user_session_path, :method => :delete do %>
-                        <span class="user tooltip-trig" data-toggle="tooltip" data-placement="bottom" title="<%= t "Logout" %>">&#59136;</span>
+                        <span class="user tooltip-trig" data-toggle="tooltip" data-placement="bottom" title="<%= t "Logout" %>">&#59201;</span>
                     <% end %>
                 </li>
             <% else %>
