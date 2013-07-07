@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  layout :resolve_layout
 
   def show
     @user = User.find(params[:id])
@@ -29,5 +30,16 @@ class UsersController < ApplicationController
     options = args.extract_options!
     options[:template] = "/users/#{params[:action]}"
     super(*(args << options))
+  end
+
+  private
+
+  def resolve_layout
+    case action_name
+      when "show"
+        "wide_layout"
+      else
+        "application"
+    end
   end
 end

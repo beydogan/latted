@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
-  layout "home_layout"
+  layout "wide_layout"
+
   def index
     @items = Item.all
 
