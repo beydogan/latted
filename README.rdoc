@@ -6,7 +6,7 @@
 
 *What* *does* *it* *do?*
 
--Movie recommendations based on your watched history and people that you are following(we call it _latted_). 
+-Movie recommendations based on your watched history  
 
 *How* *its* *made?*
 
