@@ -19,7 +19,6 @@ class User < ActiveRecord::Base
   # attr_accessible :title, :body
 
   ## FOLLOWING AND FOLLOWERS
-  has_many :items
   has_many :comments
 
   has_many :followings, :foreign_key => "follower_id",
