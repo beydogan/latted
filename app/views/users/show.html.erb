@@ -21,6 +21,15 @@
                 <% end %>
             </div>
         </div>
+        <div class="watched" style="display:none">
+            <h3>Watched Movies</h3>
+
+            <div class="items">
+                <% @user.items.each do |item| %>
+                    <%= render "item", item: item %>
+                <% end %>
+            </div>
+        </div>
     </div>
   </div>
 </div>
