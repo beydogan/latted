@@ -12,7 +12,5 @@
  *= require ./bootstrap.min
  *= require ./bootstrap-responsive.min
  *= require ./font-awesome.min
- *= require ./fc-webicons
- *= require ./styles
  *= require ./custom
  */
