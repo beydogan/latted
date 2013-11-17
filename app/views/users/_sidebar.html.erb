@@ -17,15 +17,15 @@
       </div>
 <% end %>
 
-  <ul class="nav nav-pills nav-stacked">
+  <ul class="nav nav-pills nav-stacked tabs">
     <li>
-      <a href="#" data-tab="followers">
-        <i class="icon-eye-open"></i>Latteds <span class="badge pull-right"><%= @user.followers.count %></span>
+      <a href="#" data-tab="latters">
+        <i class="icon-eye-open"></i>Latters <span class="badge pull-right"><%= @user.followers.count %></span>
       </a>
     </li>
     <li>
-      <a href="#" data-tab="following">
-        <i class="icon-user"></i>Latters <span class="badge pull-right"><%= @user.followed_users.count %></span>
+      <a href="#" data-tab="latteds">
+        <i class="icon-user"></i>Latteds <span class="badge pull-right"><%= @user.followed_users.count %></span>
       </a>
     </li>
     <li>

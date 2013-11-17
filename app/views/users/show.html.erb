@@ -3,6 +3,24 @@
     <%= render 'users/sidebar' %>
   </div>
   <div class="col-md-9">
+    <div id="user-tabs">
+        <div class="latters">
+            <h3>Latters</h3>
+            <div class="items">
+              <% @user.followers.each do |user| %>
+                <%= render "item_user", user: user %>
+              <% end %>
+            </div>
+        </div>
+        <div class="latteds" style="display:none">
+            <h3>Latteds</h3>
 
+            <div class="items">
+                <% @user.followed_users.each do |user| %>
+                    <%= render "item_user", user: user %>
+                <% end %>
+            </div>
+        </div>
+    </div>
   </div>
 </div>
