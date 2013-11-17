@@ -13,14 +13,47 @@
  */
 $icon-font-path: "/assets/twitter/";
 
+
+//Navbar
 $navbar-default-color: #FAFAFA;
-$navbar-default-link-color: #FAFAFA;
-$navbar-default-bg: #66CAC4;
+$navbar-default-bg: #66CAC4; //D4786D
 $navbar-default-border: #B5B5B5 !default;
 $navbar-border-radius: 0;
+
+$navbar-default-link-color: #FAFAFA !default;
+$navbar-default-link-hover-color: #026969 !default;
+$navbar-default-link-hover-bg: transparent !default;
+$navbar-default-link-active-color: #E8E8E8 !default;
+$navbar-default-link-active-bg: darken($navbar-default-bg, 6.5%) !default;
+$navbar-default-link-disabled-color: #ccc !default;
+$navbar-default-link-disabled-bg: transparent !default;
+
+// Navbar brand label
+$navbar-default-brand-color: $navbar-default-link-color !default;
+$navbar-default-brand-hover-color: darken($navbar-default-brand-color, 10%) !default;
+$navbar-default-brand-hover-bg: transparent !default;
+
 @import 'font-awesome';
 @import "twitter/bootstrap";
 
 .navbar {
   border: 0px solid transparent;
+}
+
+
+.row > div {
+  border: 1px solid #DEDEDE
+}
+
+
+//User Page
+.user-sidebar{
+
+}
+
+.user-sidebar .avatar {
+  margin-top: 20px
+}
+.user-sidebar .action-buttons {
+  width: 100%;
 }
