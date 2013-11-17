@@ -13,6 +13,9 @@ class Item < ActiveRecord::Base
   belongs_to :item_category
   belongs_to :user
 
+  has_many :watched_items
+  has_many :users, through: :watched_items
+
   def thumb
     attachments.find_by_id(self.thumb_id)
   end

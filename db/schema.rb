@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130508195059) do
+ActiveRecord::Schema.define(version: 20131117142946) do
 
   create_table "attachments", force: true do |t|
     t.string   "title"
@@ -120,5 +120,12 @@ ActiveRecord::Schema.define(version: 20130508195059) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "watched_items", id: false, force: true do |t|
+    t.integer "user_id"
+    t.integer "item_id"
+  end
+
+  add_index "watched_items", ["user_id", "item_id"], name: "index_watched_items_on_user_id_and_item_id"
 
 end

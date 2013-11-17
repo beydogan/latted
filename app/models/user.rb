@@ -35,7 +35,8 @@ class User < ActiveRecord::Base
   has_many :user_actions
   has_many :actions, :through => :user_actions, :source => :item
 
-
+  has_many :watched_items
+  has_many :items, :through => :watched_items
 
   def self.find_first_by_auth_conditions(warden_conditions)
     conditions = warden_conditions.dup
@@ -56,6 +57,14 @@ class User < ActiveRecord::Base
 
   def unfollow!(followed)
     followings.find_by_followed_id(followed).destroy
+  end
+
+  def watch!(item)
+    items << item
+  end
+
+  def watched?(item)
+    items.where(id: item.id).first.present?
   end
 
 
