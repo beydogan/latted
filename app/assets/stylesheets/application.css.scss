@@ -11,3 +11,6 @@
  *= require_self
  *= require ./custom
  */
+$icon-font-path: "/assets/twitter/";
+@import 'font-awesome';
+@import "twitter/bootstrap";
