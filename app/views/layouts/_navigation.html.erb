@@ -1,65 +1,47 @@
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#"><i class="icon-coffee"></i>Latted!</a>
+      </div>
 
-<!-- ============================  Navigation Start =========================== -->
-
-<div class="navbar navbar-inverse-blue navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-
-
-      <div class="navigation">
-        <ul class="nav">
-          <li class="active dropdown">
-
-            <a href="#" class="dropdown-toggle btn-navbar-blue" data-toggle="dropdown">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </a>
-
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">Link</a></li>
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
             <ul class="dropdown-menu">
-              <li><a href="cart.html">Cart</a></li>
-              <li><a href="image-page.html">Images</a></li>
-              <li><a href="image-upload.html">Uploads</a></li>
-              <li><a href="blog.html">Blog</a></li>
-              <li><a href="single-post.html">Single Post</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="search-results.html">Search Results</a></li>
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+              <li class="divider"></li>
+              <li><a href="#">One more separated link</a></li>
             </ul>
-
           </li>
-
-        </ul> <!-- end nav -->
-      </div><!--/.nav-collapse -->
-
-      <a class="brand" href="<%=root_url%>"><i class="icon-coffee"></i> Latted!</a>
-      <div class="pull-right">
-        <ul class="unstyled inline user-interaction">
-            <% if current_user %>
-                <li>
-                  <%= link_to user_path(current_user) do %><span class="username"><%= current_user.username %></span><% end %>
-                </li>
-                <li>
-                    <%= link_to destroy_user_session_path, :method => :delete do %>
-                        <span class="user tooltip-trig" data-toggle="tooltip" data-placement="bottom" title="<%= t "Logout" %>">&#59201;</span>
-                    <% end %>
-                </li>
-            <% else %>
-                <li>
-                    <%= link_to new_user_registration_url do %>
-                        <span class="user tooltip-trig" data-toggle="tooltip" data-placement="bottom" title="<%= t "Sign Up" %>">&#59136;</span>
-                    <% end %>
-                </li>
-                <li>
-                    <%= link_to new_user_session_url do %>
-                      <span class="user tooltip-trig" data-toggle="tooltip" data-placement="bottom" title="<%= t "Login" %>">&#128275;</span>
-                    <% end %>
-                </li>
-
-          <% end %>
-        </ul>  <!-- end user-interaction -->
-      </div> <!-- end pull-right -->
-    </div> <!-- end container -->
-  </div> <!-- end navbar-inner -->
-</div> <!-- end navbar-inverse-blue -->
-
-<!-- ============================  Navigation End ============================ -->
+        </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Link</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Action</a></li>
+              <li><a href="#">Another action</a></li>
+              <li><a href="#">Something else here</a></li>
+              <li class="divider"></li>
+              <li><a href="#">Separated link</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+  </div>
+</nav>
