@@ -12,5 +12,15 @@
  *= require ./custom
  */
 $icon-font-path: "/assets/twitter/";
+
+$navbar-default-color: #FAFAFA;
+$navbar-default-link-color: #FAFAFA;
+$navbar-default-bg: #66CAC4;
+$navbar-default-border: #B5B5B5 !default;
+$navbar-border-radius: 0;
 @import 'font-awesome';
 @import "twitter/bootstrap";
+
+.navbar {
+  border: 0px solid transparent;
+}
