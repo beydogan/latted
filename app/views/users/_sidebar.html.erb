@@ -1,40 +1,48 @@
+<div class="user-sidebar">
+  <div class="avatar">
+    <a href="#"><img src="http://placehold.it/214x200" alt="Adds"></a>
+  </div>
+  <h4><i class="icon-user"></i>&nbsp;<%= @user.username %></h4>
 
-<aside class="span3">
+  <% if !@me && !current_user.nil? %>
+      <div class="action-buttons">
+          <% if current_user.following?(@user).nil? %>
+            <%= link_to (t "Latte!"), follow_user_path(@user.id), :remote => true, :class => "btn btn-primary btn-small btn-block follow-button" %>
+            <%= link_to (t "Delatte!"), unfollow_user_path(@user.id), :remote => true, :class => "btn btn-primary btn-small btn-block unfollow-button", :style => "display:none" %>
 
-  <div class="categories">
-    <div class="titleHeader clearfix">
-      <h3><%=@user.username%></h3>
-    </div><!--end titleHeader-->
-    <div class="blog-adds no-top-margin">
-      <a href="#"><img src="http://placehold.it/214x200" alt="Adds"></a>
-    </div>
+          <% else %>
+            <%= link_to (t "Latte!"), follow_user_path(@user.id), :remote => true, :class => "btn btn-primary btn-small btn-block follow-button", :style => "display:none" %>
+            <%= link_to (t "Delatte!"), unfollow_user_path(@user.id), :remote => true, :class => "btn btn-primary btn-small btn-block unfollow-button" %>
+          <% end %>
+      </div>
+<% end %>
 
-    <% if !@me && !current_user.nil? %>
-        <% if current_user.following?(@user).nil? %>
-            <div class="user-follow">
-              <%= link_to (t "Follow"), follow_user_path(@user.id), :remote => true, :class => "btn btn-primary btn-small btn-block follow-button"%>
-              <%= link_to (t "Unfollow"), unfollow_user_path(@user.id), :remote => true, :class => "btn btn-primary btn-small btn-block unfollow-button", :style=> "display:none"%>
-            </div>
-        <% else %>
-            <div class="user-follow">
-              <%= link_to (t "Follow"), follow_user_path(@user.id), :remote => true, :class => "btn btn-primary btn-small btn-block follow-button hide"%>
-              <%= link_to (t "Unfollow"), unfollow_user_path(@user.id), :remote => true, :class => "btn btn-primary btn-small btn-block unfollow-button"%>
-            </div>
-        <% end %>
-    <% end %>
-
-    <ul class="unstyled tabs">
-      <li><a class="invarseColor" href="#" data-tab="followers"><i class="icon-eye-open"></i>Followers (<%=@user.followers.count%>)</a></li>
-      <li><a class="invarseColor" href="#" data-tab="following"><i class="icon-user"></i>Following (<%=@user.followed_users.count%>)</a></li>
-    </ul>
-
-    <ul class="unstyled tabs">
-      <li><a class="invarseColor" href="#" data-tab="owns"><i class="icon-star"></i>Owns (<%=@user.owns%>)</a></li>
-      <li><a class="invarseColor" href="#" data-tab="wants"><i class="icon-tags"></i>Wants (<%=@user.wants%>)</a></li>
-      <li><a class="invarseColor" href="#" data-tab="likes"><i class="icon-heart"></i>Likes (<%=@user.likes%>)</a></li>
-    </ul>
-
-  </div><!--end categories-->
-
-
-</aside><!--end aside-->
+  <ul class="nav nav-pills nav-stacked">
+    <li>
+      <a href="#" data-tab="followers">
+        <i class="icon-eye-open"></i>Latteds <span class="badge pull-right"><%= @user.followers.count %></span>
+      </a>
+    </li>
+    <li>
+      <a href="#" data-tab="following">
+        <i class="icon-user"></i>Latters <span class="badge pull-right"><%= @user.followed_users.count %></span>
+      </a>
+    </li>
+    <li>
+      <a href="#" data-tab="watched">
+        <i class="icon-user"></i>Watched <span class="badge pull-right">X</span></a>
+    </li>
+    <li>
+      <a href="#" data-tab="rated">
+        <i class="icon-user"></i>Rated <span class="badge pull-right">X</span></a>
+    </li>
+    <li>
+      <a href="#" data-tab="commented">
+        <i class="icon-user"></i>Commented <span class="badge pull-right">X</span></a>
+    </li>
+    <li>
+      <a href="#" data-tab="collections">
+        <i class="icon-user"></i>Collections <span class="badge pull-right">X</span></a>
+    </li>
+  </ul>
+</div>
