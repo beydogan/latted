@@ -36,10 +36,6 @@ role :db, domain, :primary => true
 #############################################################
 
 set :repository,  "https://github.com/dedeler/latted.git"
-set :svn_username, "git"
-set :svn_password, "123321-"
-set :scm_passphrase, "123321-"
-set :checkout, "export"
 
 #############################################################
 #	Passenger
