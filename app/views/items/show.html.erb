@@ -1,41 +1,6 @@
-<% content_for :title, @item.title %>
+<% content_for :title, @item.title #set page title %>
 
 <div class="row">
 
-    <div class="span9">
-        <div class="row">
-
-          <div class="product-details clearfix">
-            <div class="span5">
-              <div class="product-title">
-                <h1><%= @item.title %></h1>
-              </div>
-
-              <%= render :partial => 'items/show/attachments' %>
-
-            </div><!--end span5-->
-
-            <%= render :partial => 'items/show/content' %>
-
-            <div class="item-actioned-stats">
-                <a href="#who_actioned_list" role="button" data-item-id="<%=@item.id%>" data-action="like" data-toggle="modal"><%= t 'Likes'  %></a>&nbsp;<%=@item.who_likes.count%>
-                <a href="#who_actioned_list" role="button" data-item-id="<%=@item.id%>" data-action="want" data-toggle="modal"><%= t 'Wants'  %></a>&nbsp;<%=@item.who_wants.count%>
-                <a href="#who_actioned_list" role="button" data-item-id="<%=@item.id%>" data-action="own" data-toggle="modal"><%= t 'Owns'  %></a>&nbsp;<%=@item.who_owns.count%>
-            </div>
-
-          </div><!--end product-details-->
-
-        </div><!--end row-->
-
-        <%= render :partial => 'items/show/tabs' %>
-
-    </div><!--end span9-->
-
-
-    <%= render 'sidebar' %>
 
 </div>
-
-
-<%= render :partial => 'who_actioned_list_modal.html' %>
-
