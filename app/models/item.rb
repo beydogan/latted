@@ -10,7 +10,7 @@ class Item < ActiveRecord::Base
   has_many :user_actions
   has_many :actioned, :through => :user_actions, :source => :user
 
-  belongs_to :item_category
+  has_and_belongs_to_many :item_categories, join_table: "items_item_categories"
   belongs_to :user
 
   has_many :watched_items
