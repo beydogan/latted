@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131117142946) do
+ActiveRecord::Schema.define(version: 20131120162153) do
 
   create_table "attachments", force: true do |t|
     t.string   "title"
@@ -66,6 +66,11 @@ ActiveRecord::Schema.define(version: 20131117142946) do
     t.datetime "updated_at"
     t.integer  "thumb_id"
     t.decimal  "rate",             precision: 8, scale: 2
+  end
+
+  create_table "items_item_categories", force: true do |t|
+    t.integer "item_id"
+    t.integer "item_category_id"
   end
 
   create_table "rails_admin_histories", force: true do |t|
