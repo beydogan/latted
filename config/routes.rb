@@ -11,7 +11,7 @@ Latted::Application.routes.draw do
 
   get "home/index"
 
-  resources :items
+  resources :items, path: 'movies'
   resources :users
 
 
