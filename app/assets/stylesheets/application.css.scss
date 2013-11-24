@@ -10,13 +10,20 @@
  *
  *= require_self
  *= require jquery.bxslider
+ *= require_tree .
  */
 $icon-font-path: "/assets/twitter/";
+
+$main-color1: #00B7EF;
+$brand-primary: #6CC1ED;
+
+$link-color: $brand-primary !default;
+$link-hover-color: darken($link-color, 15%) !default;
 
 
 //Navbar
 $navbar-default-color: #FAFAFA;
-$navbar-default-bg: #66CAC4; //D4786D
+$navbar-default-bg: $main-color1; //D4786D
 $navbar-default-border: #B5B5B5 !default;
 $navbar-border-radius: 0;
 

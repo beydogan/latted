@@ -1,0 +1,32 @@
+.item-poster{
+    margin: 10px 0 10px 0;
+}
+
+.item-actions{
+    margin: 10px 0 10px 0;
+}
+
+.item-slider{
+    margin-top: 10px;
+    height: 320px
+}
+
+.item-slider-wrapper{
+    height: 100%
+}
+
+.slider-pager{
+    position: relative;
+    bottom: 160px;
+    left: 50%;
+    margin-left: -100px;
+}
+
+.slider-pager img{
+    height: 70px;
+    margin: 5px;
+    -moz-box-shadow: 0 0 3px #ccc;
+    -webkit-box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 0 3px #ccc;
+    border: solid #fff 3px;
+}

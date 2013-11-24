@@ -16,6 +16,8 @@
 
 $(document).ready(function(){
     $('.tooltip-trig').tooltip()
-    $('.bxslider').bxSlider();
+    $('.bxslider').bxSlider({
+        pagerCustom: ".slider-pager",
+    });
 
 })
