@@ -33,3 +33,5 @@ gem "sass-rails", "~> 4.0.1"
 
 gem 'devise'
 gem 'font-awesome-sass-rails'
+gem "rails-bootstrap-helpers"
+
