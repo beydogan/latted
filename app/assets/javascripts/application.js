@@ -11,8 +11,11 @@
 // GO AFTER THE REQUIRES BELOW.
 //= require jquery
 //= require jquery_ujs
+//= require jquery.bxslider
 //= require twitter/bootstrap
 
 $(document).ready(function(){
     $('.tooltip-trig').tooltip()
+    $('.bxslider').bxSlider();
+
 })
