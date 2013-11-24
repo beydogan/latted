@@ -26,6 +26,10 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'protected_attributes'
 
+
+gem 'capistrano'
+gem 'capistrano-rvm', '~> 0.1.0'
+
 gem 'cancan'
 gem "paperclip", "~> 3.0"
 gem 'anjlab-bootstrap-rails', '~> 3.0.2.0', :require => 'bootstrap-rails'

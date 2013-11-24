@@ -1,101 +1,56 @@
-#############################################################
-#	Application
-#############################################################
-# Add RVM's lib directory to the load path.
+set :application, 'latted.me'
+set :repo_url, 'git@github.com:beydogan/latted.git'
 
-# Load RVM's capistrano plugin.
-require "rvm/capistrano"
-set :rvm_path, "/usr/local/rvm/"
-set :rvm_bin_path, "/usr/local/rvm/bin/"
-require "bundler/capistrano"
+# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
 
+set :deploy_to, "/var/www/latted.me"
+set :scm, :git
 
-load 'deploy/assets'
+set :rvm_type, :auto
+set :rvm_ruby_version, '1.9.3-p448@latted'
 
-set :application, "latted.me"
-set :deploy_to, "/var/www/#{application}"
-
-#############################################################
-#	Settings
-#############################################################
-
-default_run_options[:pty] = true
-set :use_sudo, false
-
-#############################################################
-#	Servers
-#############################################################
-
-set :user, "passenger"
-set :domain, "server1.mehmet.pw"
-server domain, :app, :web
-role :db, domain, :primary => true
-
-#############################################################
-#	Subversion
-#############################################################
-
-set :repository,  "https://github.com/dedeler/latted.git"
-
-#############################################################
-#	Passenger
-#############################################################
-
-namespace :passenger do
-  desc "Restart Application"
-  task :restart do
-    run "touch #{current_path}/tmp/restart.txt"
-  end
-end
-
-after :deploy, "passenger:restart"
-
-set :max_asset_age, 15 ## Set asset age in minutes to test modified date against.
+role :app, "passenger@s.mehmet.pw"
 
 
 namespace :db do
-  task :db_config, :except => { :no_release => true }, :role => :app do
-    run "cp -f ~/database.yml #{release_path}/config/database.yml"
+  task :db_config do
+    on roles(:app) do
+      execute "cp -f ~/database.yml #{release_path}/config/database.yml"
+    end
   end
 end
 
 
-after "deploy:finalize_update", "db:db_config"
+after "deploy:finishing", "db:db_config"
 
-#namespace :deploy do
-#  namespace :assets do
-#    task :precompile, :roles => :web, :except => { :no_release => true } do
-#      from = source.next_revision(current_revision)
-#      if capture("cd #{latest_release} && #{source.local.log(from)} vendor/assets/ app/assets/ | wc -l").to_i > 0
-#        run %Q{cd #{latest_release} && #{rake} RAILS_ENV=#{rails_env} #{asset_env} assets:precompile}
-#      else
-#        logger.info "Skipping asset pre-compilation because there were no asset changes"
-#      end
-#    end
-#  end
-#end
+# set :format, :pretty
+# set :log_level, :debug
+# set :pty, true
 
-#
-#after "deploy:finalize_update", "deploy:assets:determine_modified_assets", "deploy:assets:conditionally_precompile"
-#
-#namespace :deploy do
-#  namespace :assets do
-#
-#    desc "Figure out modified assets."
-#    task :determine_modified_assets, :roles => assets_role, :except => { :no_release => true } do
-#      set :updated_assets, capture("find #{latest_release}/app/assets -type d -name .git -prune -o -mmin -#{max_asset_age} -type f -print", :except => { :no_release => true }).split
-#    end
-#
-#    desc "Remove callback for asset precompiling unless assets were updated in most recent git commit."
-#    task :conditionally_precompile, :roles => assets_role, :except => { :no_release => true } do
-#      if(updated_assets.empty?)
-#        callback = callbacks[:after].find{|c| c.source == "deploy:assets:precompile" }
-#        callbacks[:after].delete(callback)
-#        logger.info("Skipping asset precompiling, no updated assets.")
-#      else
-#        logger.info("#{updated_assets.length} updated assets. Will precompile.")
-#      end
-#    end
-#
-#  end
-#end
+# set :linked_files, %w{config/database.yml}
+# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
+
+# set :default_env, { path: "/opt/ruby/bin:$PATH" }
+# set :keep_releases, 5
+
+namespace :deploy do
+
+  desc 'Restart application'
+  task :restart do
+    on roles(:app), in: :sequence, wait: 5 do
+      #run "touch #{current_path}/tmp/restart.txt"
+    end
+  end
+
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
+    end
+  end
+
+  after :finishing, 'deploy:cleanup'
+
+end
